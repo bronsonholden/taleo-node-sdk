@@ -1,0 +1,52 @@
+{
+  "name": "taleo-node-sdk",
+  "version": "0.0.0",
+  "description": "Taleo HCM REST API SDK for Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc mocha test/**/*.js",
+    "lint": "eslint .",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/paulholden2/taleo-node-sdk.git"
+  },
+  "keywords": [
+    "taleo",
+    "hcm",
+    "rest",
+    "api",
+    "sdk",
+    "node",
+    "business",
+    "human",
+    "resources",
+    "hr"
+  ],
+  "author": "Paul Holden",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/paulholden2/taleo-node-sdk/issues"
+  },
+  "homepage": "https://github.com/paulholden2/taleo-node-sdk#readme",
+  "dependencies": {
+    "async": "^2.6.0",
+    "lodash": "^4.17.10",
+    "request": "^2.86.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "coveralls": "^3.0.1",
+    "dotenv": "^5.0.1",
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-chai-friendly": "^0.4.1",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "mocha": "^5.2.0",
+    "nyc": "^11.8.0"
+  }
+}
