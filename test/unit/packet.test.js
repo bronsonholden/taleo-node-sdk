@@ -1,6 +1,5 @@
 const { describe, it, before, after } = require('mocha');
 const { expect } = require('chai');
-const async = require('async');
 const Taleo = require('../../');
 const env = require('../env');
 
@@ -91,6 +90,6 @@ describe('packet', function () {
     it('packet completed', function (done) {
       expect(packet.getCompleted()).to.be.a('boolean');
       done();
-    })
+    });
   });
 });

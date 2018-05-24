@@ -1,9 +1,7 @@
 const { describe, it, before, after } = require('mocha');
 const { expect } = require('chai');
-const async = require('async');
 const Taleo = require('../../');
 const env = require('../env');
-const fs = require('fs');
 
 describe('get-object', function () {
   var taleo;
