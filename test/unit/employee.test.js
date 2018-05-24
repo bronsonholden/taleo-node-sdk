@@ -40,15 +40,17 @@ describe('employee', function () {
     });
   });
 
-  it('get all employees', function (done) {
-    this.timeout(300000);
-    taleo.getEmployees((err, employees) => {
-      expect(err).to.not.exist;
-      expect(employees).to.exist;
-      expect(employees).to.be.an('array');
-      done();
+  if (process.env.GET_ALL_TESTS) {
+    it('get all employees', function (done) {
+      this.timeout(300000);
+      taleo.getEmployees((err, employees) => {
+        expect(err).to.not.exist;
+        expect(employees).to.exist;
+        expect(employees).to.be.an('array');
+        done();
+      });
     });
-  });
+  }
 
   describe('employee properties', function () {
     var employee;
