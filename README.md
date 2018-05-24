@@ -61,3 +61,33 @@ taleo.getEmployee(12345, (err, employee) => {
   });
 });
 ```
+
+#### Get employee packets
+
+```js
+taleo.getEmployee(12345, (err, employee) => {
+  taleo.getPackets(employee, (err, packets) => {
+    // ...
+  });
+});
+```
+
+## Packets
+
+#### Get packet by ID
+
+```js
+taleo.getPacket(7890, (err, packet) => {
+  // ...
+});
+```
+
+#### Get packet activities
+
+```js
+taleo.getPacket(7890, (err, packet) => {
+  taleo.getActivities(packet, (err, activities) => {
+    // ...
+  });
+});
+```
