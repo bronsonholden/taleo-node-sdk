@@ -27,6 +27,29 @@ describe('employee', function () {
     });
   });
 
+  it('get employee page', function (done) {
+    taleo.getEmployees({
+      start: 1,
+      limit: 5
+    }, (err, employees) => {
+      expect(err).to.not.exist;
+      expect(employees).to.exist;
+      expect(employees).to.be.an('array');
+      expect(employees.length).to.equal(5);
+      done();
+    });
+  });
+
+  it('get all employees', function (done) {
+    this.timeout(300000);
+    taleo.getEmployees((err, employees) => {
+      expect(err).to.not.exist;
+      expect(employees).to.exist;
+      expect(employees).to.be.an('array');
+      done();
+    });
+  });
+
   describe('employee properties', function () {
     var employee;
 
