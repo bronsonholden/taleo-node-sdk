@@ -35,8 +35,7 @@ describe('activity', function () {
       expect(activity).to.be.an('object');
       taleo.downloadActivity(activity, fs.createWriteStream('./test1.pdf'), (err) => {
         expect(err).to.not.exist;
-        fs.unlink('./test1.pdf');
-        done();
+        fs.unlink('./test1.pdf', done);
       });
     });
   });
@@ -50,8 +49,7 @@ describe('activity', function () {
         readStream.pipe(fs.createWriteStream('./test2.pdf'));
       }, (err) => {
         expect(err).to.not.exist;
-        fs.unlink('./test2.pdf');
-        done();
+        fs.unlink('./test2.pdf', done);
       });
     });
   });

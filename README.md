@@ -91,3 +91,43 @@ taleo.getPacket(7890, (err, packet) => {
   });
 });
 ```
+
+## Activities
+
+#### Get activity by ID
+
+```js
+taleo.getActivity(7654, (err, activity) => {
+  // ...
+});
+```
+
+#### Download activity
+
+Download and activity form as a PDF and write the contents to a writable stream.
+
+```js
+taleo.getActivity(7654, (err, activity) => {
+  taleo.downloadActivity(activity, fs.createWriteStream('activity.pdf'), (err) => {
+    // ...
+  });
+});
+```
+
+#### Get activity form as readable stream
+
+Since requests are handled in a queue, your file may not download immediately
+when downloadActivity() is called. As such, the readable stream is passed
+as an argument to a handler function which you can then use. The readable
+stream is a wrapper around a request, so it must be consumed otherwise the
+request will not go through, blocking the queue.
+
+```js
+taleo.getActivity(7654, (err, activity) => {
+  taleo.downloadActivity(activity, (stream) => {
+    stream.pipe(fs.createWriteStream('activity.pdf'));
+  }, (err) => {
+    // ...
+  });
+});
+```

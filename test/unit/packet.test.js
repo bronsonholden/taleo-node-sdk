@@ -41,7 +41,56 @@ describe('packet', function () {
     it('packet ID', function (done) {
       expect(packet.getId()).to.exist;
       expect(packet.getId()).to.be.a('number');
+      expect(packet.getId()).to.equal(1037);
       done();
     });
+
+    it('packet title', function (done) {
+      expect(packet.getPacketTitle()).to.be.a('string');
+      done();
+    });
+
+    it('packet employee', function (done) {
+      expect(packet.getEmployeeId()).to.be.a('number');
+      done();
+    });
+
+    it('packet owner', function (done) {
+      expect(packet.getOwnerId()).to.be.a('number');
+      done();
+    });
+
+    it('packet creator', function (done) {
+      expect(packet.getCreatorId()).to.be.a('number');
+      done();
+    });
+
+    it('packet creator', function (done) {
+      expect(packet.getCreatorId()).to.be.a('number');
+      done();
+    });
+
+    it('packet entity type', function (done) {
+      expect(packet.getEntityType()).to.be.a('string');
+      expect(packet.getEntityType()).to.equal('packet');
+      done();
+    });
+
+    it('packet activity count', function (done) {
+      expect(packet.getActivityCount()).to.be.a('number');
+      expect(packet.getActivityCount()).to.be.above(0);
+      done();
+    });
+
+    it('packet activity count', function (done) {
+      expect(packet.getCompletedActivityCount()).to.be.a('number');
+      expect(packet.getCompletedActivityCount()).to.be.above(-1);
+      done();
+    });
+
+    it('packet completed', function (done) {
+      expect(packet.getCompleted()).to.be.a('boolean');
+      done();
+    })
   });
 });

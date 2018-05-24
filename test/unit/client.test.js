@@ -8,11 +8,13 @@ describe('connect', function () {
   this.timeout(30000);
 
   it('connect to and disconnect from Taleo', function (done) {
-    var taleo = new Taleo(env);
+    async.timesSeries(5, (n, callback) => {
+      var taleo = new Taleo(env);
 
-    taleo.connect((err) => {
-      expect(err).to.not.exist;
-      taleo.close(done);
-    });
+      taleo.connect((err) => {
+        expect(err).to.not.exist;
+        taleo.close(callback);
+      });
+    }, done);
   });
 });
