@@ -67,5 +67,95 @@ describe('employee', function () {
       expect(employee.getId()).to.be.a('number');
       done();
     });
+
+    it('employee first name', function (done) {
+      expect(employee.getFirstName()).to.exist;
+      expect(employee.getFirstName()).to.be.a('string');
+      done();
+    });
+
+    it('employee last name', function (done) {
+      expect(employee.getLastName()).to.exist;
+      expect(employee.getLastName()).to.be.a('string');
+      done();
+    });
+
+    it('employee gender', function (done) {
+      expect(employee.getGender()).to.exist;
+      expect(employee.getGender()).to.be.a('string');
+      done();
+    });
+
+    it('employee location', function (done) {
+      expect(employee.getLocation()).to.exist;
+      expect(employee.getLocation()).to.be.a('number');
+      done();
+    });
+
+    it('employee job title', function (done) {
+      expect(employee.getJobTitle()).to.exist;
+      expect(employee.getJobTitle()).to.be.a('string');
+      done();
+    });
+
+    it('employee phone number', function (done) {
+      expect(employee.getPhoneNumber()).to.exist;
+      expect(employee.getPhoneNumber()).to.be.a('string');
+      done();
+    });
+
+    it('employee SSN', function (done) {
+      expect(employee.getSsn()).to.exist;
+      expect(employee.getSsn()).to.be.a('string');
+      done();
+    });
+
+    it('employee email', function (done) {
+      expect(employee.getEmail()).to.exist;
+      expect(employee.getEmail()).to.be.a('string');
+      done();
+    });
+
+    it('employee department', function (done) {
+      expect(employee.getDepartment()).to.exist;
+      expect(employee.getDepartment()).to.be.a('number');
+      done();
+    });
+
+    it('employee address', function (done) {
+      expect(employee.getAddress()).to.exist;
+      expect(employee.getAddress()).to.be.a('string');
+      done();
+    });
+
+    it('employee address (second line)', function (done) {
+      expect(employee.getAddress2()).to.exist;
+      expect(employee.getAddress2()).to.be.a('string');
+      done();
+    });
+
+    it('employee city', function (done) {
+      expect(employee.getCity()).to.exist;
+      expect(employee.getCity()).to.be.a('string');
+      done();
+    });
+
+    it('employee county', function (done) {
+      expect(employee.getCounty()).to.exist;
+      expect(employee.getCounty()).to.be.a('string');
+      done();
+    });
+
+    it('employee ZIP code', function (done) {
+      expect(employee.getZipCode()).to.exist;
+      expect(employee.getZipCode()).to.be.a('string');
+      done();
+    });
+
+    it('employee country', function (done) {
+      expect(employee.getCountry()).to.exist;
+      expect(employee.getCountry()).to.be.a('string');
+      done();
+    });
   });
 });
