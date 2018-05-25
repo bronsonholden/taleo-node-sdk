@@ -3,7 +3,7 @@ Taleo HCM REST API SDK for Node.js
 
 [![NPM](https://nodei.co/npm/taleo-node-sdk.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/taleo-node-sdk/)
 
-[![Build Status](https://travis-ci.org/paulholden2/taleo-node-sdk.svg?branch=master)](https://travis-ci.org/paulholden2/taleo-node-sdk) [![dependencies Status](https://david-dm.org/paulholden2/taleo-node-sdk/status.svg)](https://david-dm.org/paulholden2/taleo-node-sdk) [![devDependencies Status](https://david-dm.org/paulholden2/taleo-node-sdk/dev-status.svg)](https://david-dm.org/paulholden2/taleo-node-sdk?type=dev)
+[![Build Status](https://travis-ci.org/paulholden2/taleo-node-sdk.svg?branch=master)](https://travis-ci.org/paulholden2/taleo-node-sdk) [![Coverage Status](https://coveralls.io/repos/github/paulholden2/taleo-node-sdk/badge.svg?branch=master)](https://coveralls.io/github/paulholden2/taleo-node-sdk?branch=master) [![dependencies Status](https://david-dm.org/paulholden2/taleo-node-sdk/status.svg)](https://david-dm.org/paulholden2/taleo-node-sdk) [![devDependencies Status](https://david-dm.org/paulholden2/taleo-node-sdk/dev-status.svg)](https://david-dm.org/paulholden2/taleo-node-sdk?type=dev)
 
 A Node.js REST API SDK for Taleo Business Edition. The data in Taleo is structured
 as entities and relationships. Each entity type can have relationships to other entities,
