@@ -29,7 +29,9 @@ var taleo = new Taleo({
   password: 'your_password'
 });
 
-// ...
+taleo.connect((err) => {
+  // ...
+});
 ```
 
 #### Disconnect
