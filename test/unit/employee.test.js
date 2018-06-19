@@ -40,16 +40,28 @@ describe('employee', function () {
   });
 
   it('get second employee page', function (done) {
+    var eid;
+
     taleo.getEmployees({
-      start: 6,
+      start: 1,
       limit: 5
     }, (err, employees) => {
       expect(err).to.not.exist;
       expect(employees).to.exist;
       expect(employees).to.be.an('array');
       expect(employees.length).to.equal(5);
-      expect(employees[0].getId()).to.not.equal(55);
-      done();
+      eid = employees[0].getId();
+      taleo.getEmployees({
+        start: 6,
+        limit: 5
+      }, (err, employees) => {
+        expect(err).to.not.exist;
+        expect(employees).to.exist;
+        expect(employees).to.be.an('array');
+        expect(employees.length).to.equal(5);
+        expect(employees[0].getId()).to.not.equal(eid);
+        done();
+      });
     });
   });
 
