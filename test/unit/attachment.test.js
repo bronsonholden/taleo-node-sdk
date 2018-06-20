@@ -4,6 +4,7 @@ const chai = require('chai');
 const expect = chai.expect;
 const Taleo = require('../../');
 const env = require('../env');
+const md5 = require('md5');
 
 chai.use(require('chai-url'));
 
@@ -34,7 +35,12 @@ describe('packet', function () {
           readStream.pipe(fs.createWriteStream('./attachment1.pdf'));
         }, (err) => {
           expect(err).to.not.exist;
-          fs.unlink('./attachment1.pdf', done);
+          fs.readFile('./attachment1.pdf', (err, data) => {
+            expect(err).to.not.exist;
+            expect(data).to.exist;
+            expect(md5(data)).to.equal('3e017a8eebeebbdfe6237f4f29f5a9f6');
+            fs.unlink('./attachment1.pdf', done);
+          });
         });
       });
     });
