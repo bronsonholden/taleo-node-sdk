@@ -1,3 +1,4 @@
+const fs = require('fs');
 const { describe, it, before, after } = require('mocha');
 const chai = require('chai');
 const expect = chai.expect;
@@ -18,6 +19,25 @@ describe('packet', function () {
 
   after(function (done) {
     taleo.close(done);
+  });
+
+  it('download attachment', function (done) {
+    taleo.getEmployee(614, (err, employee) => {
+      expect(err).to.not.exist;
+      expect(employee).to.exist;
+      taleo.getAttachments(employee, (err, attachments) => {
+        expect(err).to.not.exist;
+        expect(attachments).to.exist;
+        expect(attachments).to.be.an('array');
+        expect(attachments.length).to.be.above(0);
+        taleo.downloadAttachment(attachments[0], (readStream) => {
+          readStream.pipe(fs.createWriteStream('./attachment1.pdf'));
+        }, (err) => {
+          expect(err).to.not.exist;
+          fs.unlink('./attachment1.pdf', done);
+        });
+      });
+    });
   });
 
   describe('attachment properties', function () {
