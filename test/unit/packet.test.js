@@ -18,7 +18,7 @@ describe('packet', function () {
   });
 
   it('get packet by ID', function (done) {
-    taleo.getPacket(1037, (err, packet) => {
+    taleo.getPacket(746, (err, packet) => {
       expect(err).to.not.exist;
       expect(packet).to.exist;
       expect(packet).to.be.an('object');
@@ -30,7 +30,7 @@ describe('packet', function () {
     var packet;
 
     before(function (done) {
-      taleo.getPacket(1037, (err, pkt) => {
+      taleo.getPacket(746, (err, pkt) => {
         packet = pkt;
         expect(err).to.not.exist;
         done();
@@ -40,7 +40,7 @@ describe('packet', function () {
     it('packet ID', function (done) {
       expect(packet.getId()).to.exist;
       expect(packet.getId()).to.be.a('number');
-      expect(packet.getId()).to.equal(1037);
+      expect(packet.getId()).to.equal(746);
       done();
     });
 

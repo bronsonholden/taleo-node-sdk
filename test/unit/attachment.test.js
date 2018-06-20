@@ -24,7 +24,7 @@ describe('packet', function () {
     var attachment;
 
     before(function (done) {
-      taleo.getEmployee(1108, (err, employee) => {
+      taleo.getEmployee(614, (err, employee) => {
         expect(err).to.not.exist;
         taleo.getAttachments(employee, (err, attachments) => {
           expect(err).to.not.exist;
@@ -57,7 +57,7 @@ describe('packet', function () {
     it('attachment entity', function (done) {
       expect(attachment.getAttachedId()).to.exist;
       expect(attachment.getAttachedId()).to.be.a('number');
-      expect(attachment.getAttachedId()).to.be.equal(1108);
+      expect(attachment.getAttachedId()).to.be.equal(614);
       done();
     });
 
@@ -73,7 +73,7 @@ describe('packet', function () {
       expect(attachment.getDownloadUrl()).to.be.a('string');
       expect(attachment.getDownloadUrl()).to.be.have.protocol('https');
       expect(attachment.getDownloadUrl()).to.be.contain.hostname('taleo.net');
-      expect(attachment.getDownloadUrl()).to.be.contain.path(`/object/employee/1108/attachment/${attachment.getId()}`);
+      expect(attachment.getDownloadUrl()).to.be.contain.path(`/object/employee/614/attachment/${attachment.getId()}`);
       done();
     });
   });

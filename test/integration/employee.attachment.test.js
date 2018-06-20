@@ -18,7 +18,7 @@ describe('employee - attachment', function () {
   });
 
   it('get employee attachments', function (done) {
-    taleo.getEmployee(110, (err, employee) => {
+    taleo.getEmployee(614, (err, employee) => {
       expect(err).to.not.exist;
       expect(employee).to.exist;
       expect(employee).to.be.an('object');

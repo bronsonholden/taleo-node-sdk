@@ -19,7 +19,7 @@ describe('activity', function () {
   });
 
   it('get activity by ID', function (done) {
-    taleo.getActivity(17806, (err, activity) => {
+    taleo.getActivity(11923, (err, activity) => {
       expect(err).to.not.exist;
       expect(activity).to.exist;
       expect(activity).to.be.an('object');
@@ -28,7 +28,7 @@ describe('activity', function () {
   });
 
   it('download to file', function (done) {
-    taleo.getActivity(17806, (err, activity) => {
+    taleo.getActivity(11923, (err, activity) => {
       expect(err).to.not.exist;
       expect(activity).to.exist;
       expect(activity).to.be.an('object');
@@ -40,7 +40,7 @@ describe('activity', function () {
   });
 
   it('download to file via request handler', function (done) {
-    taleo.getActivity(17806, (err, activity) => {
+    taleo.getActivity(11923, (err, activity) => {
       expect(err).to.not.exist;
       expect(activity).to.exist;
       expect(activity).to.be.an('object');

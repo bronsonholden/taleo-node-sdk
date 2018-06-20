@@ -18,7 +18,7 @@ describe('packet - activity', function () {
   });
 
   it('get packet activities', function (done) {
-    taleo.getPacket(1037, (err, packet) => {
+    taleo.getPacket(746, (err, packet) => {
       expect(err).to.not.exist;
       expect(packet).to.exist;
       expect(packet).to.be.an('object');

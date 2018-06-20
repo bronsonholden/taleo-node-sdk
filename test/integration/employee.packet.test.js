@@ -18,7 +18,7 @@ describe('employee - packet', function () {
   });
 
   it('get employee packets', function (done) {
-    taleo.getEmployee(1108, (err, employee) => {
+    taleo.getEmployee(614, (err, employee) => {
       expect(err).to.not.exist;
       expect(employee).to.exist;
       expect(employee).to.be.an('object');
